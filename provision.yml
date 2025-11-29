@@ -26,3 +26,8 @@
         mode: '0440'
         line: 'alex ALL=(ALL) NOPASSWD:ALL'
         validate: 'visudo -cf %s'
+
+    - name: Change hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
+        use: systemd
