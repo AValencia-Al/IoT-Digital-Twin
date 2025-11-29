@@ -5,7 +5,7 @@
   tasks:
     - name: Create alex user
       user:
-        name: alex
+        name: alexvalenciaalvarez
         state: present
         shell: /bin/bash
         create_home: yes
@@ -14,15 +14,15 @@
 
     - name: Add SSH public key
       authorized_key:
-        user: alex
+        user: alexvalenciaalvarez
         state: present
-        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPFWzB0dcBxVCF1Hc0uJSyvWQxvS9KABGMYLGnJtrELy valen@Alexs_PC"
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuKibT0egtRo5PnzfrD6iqAjHXqx3p6U4gGKmYkJjKt1M7RulCmiKfzcQ5IoU9S4eAxWVY8FtzdUgQAiAeeJUZ5K7wyLejCoPlYIXUOPASrIRIKE1kP8MtEE7df0ygI3xATmTviREsV9yrq9PWBk/sqQ8fi8h1tWQKnIKyYH8yA9Z+V7vGnU286HfmGAUsAsHX9rcSib2MA6/mddT/9toMk47TlBdn952OA5lyfevBRCAIvGPX3ib3yEtdVfkRZYGWi0RBzDoYth+m3/8s5f7mGAuTScsbDqLBas9XQiIIa5BFmra9qZMcPxM7VJslYXZE3G4zfQ+FasA9TvUSznygBoqRLBnLBITyNeoaKWrJifTpSe4JryvUGTX1n++RZwOByUTBLDup4CiHEP/79jfSC110Y+RghSmlaiZmMJcVA5SlM3DrwUaXuCMiayw/ygl5HN8cbBA/IelMak1JwplIv4SjLwTR5Yl+rLi022jqCgwNQhXoAE6FNa1rpavMft8= alexvalenciaalvarez@mac.lsbu.ac.uk"
 
     - name: Check passwordless sudo #cowboy
       lineinfile:
-        path: /etc/sudoers.d/alex
+        path: /etc/sudoers.d/alexvalenciaalvarez
         state: present
         create: yes
         mode: '0440'
-        line: 'alex ALL=(ALL) NOPASSWD:ALL'
+        line: 'alexvalenciaalvarez ALL=(ALL) NOPASSWD:ALL'
         validate: 'visudo -cf %s'
