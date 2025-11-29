@@ -16,7 +16,7 @@
       authorized_key:
         user: alex
         state: present
-        key: #put your PC's ssh key here
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPFWzB0dcBxVCF1Hc0uJSyvWQxvS9KABGMYLGnJtrELy valen@Alexs_PC"
 
     - name: Check passwordless sudo #cowboy
       lineinfile:
