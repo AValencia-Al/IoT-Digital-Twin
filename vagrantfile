@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
         v.name = "mqtt1-u" 
       end
       twin.vm.provision "ansible" do |ansible|
-        ansible.playbook = "configure-vm.yml"
+        ansible.playbook = "provision.yml"
       end
     end
 
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
       v.name = "mqtt2-u"
     end
     twin.vm.provision "ansible" do |ansible|
-      ansible.playbook = "configure-vm.yml"
+      ansible.playbook = "provision.yml"
     end
   end
 end
